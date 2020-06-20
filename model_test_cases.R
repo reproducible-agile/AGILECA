@@ -217,7 +217,7 @@ plotResult <- function(data){
   # nc3_coords <- as.data.frame(sf::st_coordinates(nc3_points))
   
   p <- ggplot() + 
-    geom_sf(data=sf_df, aes(fill =  step), lwd=0, color=NA) +
+    geom_sf(data=sf_df, aes(fill = step, geometry = wkt), lwd=0, color=NA) +
     # scale_fill_viridis_c(option = "inferno") + 
     scale_fill_gradient(low="#DCDCDC", high="#708090")+
     theme(axis.title.x=element_blank(),
@@ -242,7 +242,7 @@ finalPlot <- function(data){
   # nc3_coords <- as.data.frame(sf::st_coordinates(nc3_points))
   
   p <- ggplot() + 
-    geom_sf(data=sf_df, aes(fill =  state), lwd=0, color=NA)
+    geom_sf(data=sf_df, aes(fill =  state, geometry = wkt), lwd=0, color=NA)
   return(p) 
 }
 
@@ -353,7 +353,7 @@ testLandUse <- function(maxiteration,wind,windCoef){
       # let's run optimization once
       print("storing Data")
       boundry <- filter(j)%>%
-        left_join(lookup,by=c("dggid","dggid"))%>%
+        left_join(lookup,by=c("dggid"))%>%
         dplyr::select(dggid,i,j,"wkt"=wkt.y,state)
       finalresults <- mutate(j,step=i)%>%
         dplyr::union(finalresults,j)
