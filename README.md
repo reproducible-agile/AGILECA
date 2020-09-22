@@ -9,7 +9,7 @@ Integrating cellular automata and discrete global grid systems: a case study int
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/am2222/AGILECA.git/master)
 
-
+[![Reproducible AGILE Badge](https://reproducible-agile.github.io/public/images/badge/AGILE-reproducible-badge.svg)](https://doi.org/10.17605/OSF.IO/ZTC7M)
 
 ## Abstract
 
